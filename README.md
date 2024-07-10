@@ -1,4 +1,4 @@
-en el sifuiente video aprenderan a usar git y github(antes del video preguntenle a chatgpt como instalar git en el pc, es un programa adicional que les ayudara para hacer lo que hacen en el video):
+en el siguiente video aprenderan a usar git y github(antes del video preguntenle a chatgpt como instalar git en el pc, es un programa adicional que les ayudara para hacer lo que hacen en el video):
 https://www.youtube.com/watch?v=44ziZ12rJwU
 
 En el siguiente video podran entender las principales partes del marlin:
