@@ -13,12 +13,31 @@ def insertar_comando_servo(input, output):
             capa += 1
             # añade el comando del servo despues del cambio de capa
             comando_servo = [
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G1 Z5 ; sube el extrusor 5 mm (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
                 f"M280 P0 S180 ; Baja el sistema (Layer {capa})\n",
-                f"M280 P1 S0 ; acomoda el sistema para cortar (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
+                f"M280 P1 S152 ; acomoda el sistema para cortar (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
                 f"M280 P2 S180 ; corta (Layer {capa})\n",
-                f"M280 P2 S90 ; abre cuchillas (Layer {capa})\n",
-                f"M280 P1 S40 ; acomoda el sistema para subir (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
+                f"M280 P2 S40 ; abre cuchillas (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
+                f"M280 P1 S180 ; acomoda el sistema para subir (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
                 f"M280 P0 S0 ; sube el sistema (Layer {capa})\n"
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
+                f"G1 Z-5 ; baja el extrusor 5 mm (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
             ]
             gcode_modificado.extend(comando_servo)
     
