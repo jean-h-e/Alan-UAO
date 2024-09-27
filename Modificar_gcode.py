@@ -29,7 +29,7 @@ def insertar_comando_servo(input, output):
                 f"M280 P2 S180 ; corta (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
-                f"M280 P2 S40 ; abre cuchillas (Layer {capa})\n",
+                f"M280 P2 S0 ; abre cuchillas (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
                 f"M280 P1 S180 ; acomoda el sistema para subir (Layer {capa})\n",
