@@ -28,12 +28,6 @@ G92 E0
 G92 E0
 ;LAYER_COUNT:4
 ;LAYER:0
-M280 P0 S180 ; Baja el sistema (Layer 1)
-M280 P1 S0 ; acomoda el sistema para cortar (Layer 1)
-M280 P2 S180 ; corta (Layer 1)
-M280 P2 S90 ; abre cuchillas (Layer 1)
-M280 P1 S40 ; acomoda el sistema para subir (Layer 1)
-M280 P0 S0 ; sube el sistema (Layer 1)
 M117 INDICATOR-Layer0
 M107
 G0 F3000 X691.921 Y316.187 Z1.06
@@ -680,12 +674,32 @@ G0 F3000 X720.664 Y484.026
 G0 X722.084 Y485.446
 ;TIME_ELAPSED:276.259650
 ;LAYER:1
+M400 ; se asegura que todos los movimientos previos estan completos (Layer 2)
+G4 s1 ; delay 1 segundo (Layer 2)
+G1 Z30; sube 30 mm el extrusor (Layer 2)
+M400 ; espera comando anterior (Layer 2)
+G4 s1 ; delay 1 segundo (Layer 2)
 M280 P0 S180 ; Baja el sistema (Layer 2)
-M280 P1 S0 ; acomoda el sistema para cortar (Layer 2)
+M400 ; espera comando anterior (Layer 2)
+G4 P500 ; delay 500 ms (Layer 2)
+M280 P1 S60 ; acomoda el sistema para cortar (Layer 2)
+M400 ; espera comando anterior (Layer 2)
+G4 P500 ; delay 500 ms (Layer 2)
 M280 P2 S180 ; corta (Layer 2)
+M400 ; espera comando anterior (Layer 2)
+G4 P500 ; delay 500 ms (Layer 2)
 M280 P2 S90 ; abre cuchillas (Layer 2)
-M280 P1 S40 ; acomoda el sistema para subir (Layer 2)
+M400 ; espera comando anterior (Layer 2)
+G4 P500 ; delay 500 ms (Layer 2)
+M280 P1 S90 ; acomoda el sistema para subir (Layer 2)
+M400 ; espera comando anterior (Layer 2)
+G4 P500 ; delay 500 ms (Layer 2)
 M280 P0 S0 ; sube el sistema (Layer 2)
+M400 ; espera comando anterior (Layer 2)
+G4 P500 ; delay 500 ms (Layer 2)
+G1 Z-30; baja 30 mm el extrusor (Layer 2)
+M400 ; espera comando anterior (Layer 2)
+G4 s2 ; delay 2 s(Layer 2)
 M117 INDICATOR-Layer1
 ;TYPE:WALL-OUTER
 ;MESH:Probeta.STL
@@ -734,12 +748,32 @@ G0 F3000 X720.664 Y484.026
 G0 X722.084 Y485.446
 ;TIME_ELAPSED:369.467666
 ;LAYER:2
+M400 ; se asegura que todos los movimientos previos estan completos (Layer 3)
+G4 s1 ; delay 1 segundo (Layer 3)
+G1 Z30; sube 30 mm el extrusor (Layer 3)
+M400 ; espera comando anterior (Layer 3)
+G4 s1 ; delay 1 segundo (Layer 3)
 M280 P0 S180 ; Baja el sistema (Layer 3)
-M280 P1 S0 ; acomoda el sistema para cortar (Layer 3)
+M400 ; espera comando anterior (Layer 3)
+G4 P500 ; delay 500 ms (Layer 3)
+M280 P1 S60 ; acomoda el sistema para cortar (Layer 3)
+M400 ; espera comando anterior (Layer 3)
+G4 P500 ; delay 500 ms (Layer 3)
 M280 P2 S180 ; corta (Layer 3)
+M400 ; espera comando anterior (Layer 3)
+G4 P500 ; delay 500 ms (Layer 3)
 M280 P2 S90 ; abre cuchillas (Layer 3)
-M280 P1 S40 ; acomoda el sistema para subir (Layer 3)
+M400 ; espera comando anterior (Layer 3)
+G4 P500 ; delay 500 ms (Layer 3)
+M280 P1 S90 ; acomoda el sistema para subir (Layer 3)
+M400 ; espera comando anterior (Layer 3)
+G4 P500 ; delay 500 ms (Layer 3)
 M280 P0 S0 ; sube el sistema (Layer 3)
+M400 ; espera comando anterior (Layer 3)
+G4 P500 ; delay 500 ms (Layer 3)
+G1 Z-30; baja 30 mm el extrusor (Layer 3)
+M400 ; espera comando anterior (Layer 3)
+G4 s2 ; delay 2 s(Layer 3)
 M117 INDICATOR-Layer2
 ;TYPE:WALL-OUTER
 ;MESH:Probeta.STL
@@ -787,12 +821,32 @@ G0 F3000 X720.664 Y484.026
 G0 X722.084 Y485.446
 ;TIME_ELAPSED:462.668983
 ;LAYER:3
+M400 ; se asegura que todos los movimientos previos estan completos (Layer 4)
+G4 s1 ; delay 1 segundo (Layer 4)
+G1 Z30; sube 30 mm el extrusor (Layer 4)
+M400 ; espera comando anterior (Layer 4)
+G4 s1 ; delay 1 segundo (Layer 4)
 M280 P0 S180 ; Baja el sistema (Layer 4)
-M280 P1 S0 ; acomoda el sistema para cortar (Layer 4)
+M400 ; espera comando anterior (Layer 4)
+G4 P500 ; delay 500 ms (Layer 4)
+M280 P1 S60 ; acomoda el sistema para cortar (Layer 4)
+M400 ; espera comando anterior (Layer 4)
+G4 P500 ; delay 500 ms (Layer 4)
 M280 P2 S180 ; corta (Layer 4)
+M400 ; espera comando anterior (Layer 4)
+G4 P500 ; delay 500 ms (Layer 4)
 M280 P2 S90 ; abre cuchillas (Layer 4)
-M280 P1 S40 ; acomoda el sistema para subir (Layer 4)
+M400 ; espera comando anterior (Layer 4)
+G4 P500 ; delay 500 ms (Layer 4)
+M280 P1 S90 ; acomoda el sistema para subir (Layer 4)
+M400 ; espera comando anterior (Layer 4)
+G4 P500 ; delay 500 ms (Layer 4)
 M280 P0 S0 ; sube el sistema (Layer 4)
+M400 ; espera comando anterior (Layer 4)
+G4 P500 ; delay 500 ms (Layer 4)
+G1 Z-30; baja 30 mm el extrusor (Layer 4)
+M400 ; espera comando anterior (Layer 4)
+G4 s2 ; delay 2 s(Layer 4)
 M117 INDICATOR-Layer3
 ;TYPE:WALL-OUTER
 ;MESH:Probeta.STL
