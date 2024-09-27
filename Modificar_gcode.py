@@ -10,9 +10,12 @@ def insertar_comando_servo(input, output):
         
         # busca cambio de capa
         if line.startswith(';LAYER:'):
-            capa += 1
-            # añade el comando del servo despues del cambio de capa
-            comando_servo = [
+            if capa == 0:
+                capa +=1
+            else:
+                capa += 1
+                # añade el comando del servo despues del cambio de capa
+                comando_servo = [
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G1 Z5 ; sube el extrusor 5 mm (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
@@ -38,8 +41,8 @@ def insertar_comando_servo(input, output):
                 f"G1 Z-5 ; baja el extrusor 5 mm (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
-            ]
-            gcode_modificado.extend(comando_servo)
+                ]
+                gcode_modificado.extend(comando_servo)
     
     with open(output, 'w') as f:
         f.writelines(gcode_modificado)
