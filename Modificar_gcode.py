@@ -17,7 +17,7 @@ def insertar_comando_servo(input, output):
                 # añade el comando del servo despues del cambio de capa
                 comando_servo = [
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
-                f"G1 Z5 ; sube el extrusor 5 mm (Layer {capa})\n",
+                f"G1 Z10 ; sube el extrusor 5 mm (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
                 f"M280 P0 S180 ; Baja el sistema (Layer {capa})\n",
@@ -32,13 +32,19 @@ def insertar_comando_servo(input, output):
                 f"M280 P2 S0 ; abre cuchillas (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
+                f"M280 P2 S180 ; corta (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
+                f"M280 P2 S0 ; abre cuchillas (Layer {capa})\n",
+                f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
+                f"G4 P500 ; delay 500 ms (Layer {capa})\n",
                 f"M280 P1 S180 ; acomoda el sistema para subir (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
                 f"M280 P0 S0 ; sube el sistema (Layer {capa})\n"
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
-                f"G1 Z-5 ; baja el extrusor 5 mm (Layer {capa})\n",
+                f"G1 Z-10 ; baja el extrusor 5 mm (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
                 ]
@@ -50,8 +56,8 @@ def insertar_comando_servo(input, output):
     return capa
 
 # cambiar nombres si es necesario
-input = "PA_sin_fibras.gcode"
-output = "PA_corte_sin_fibra.gcode"
+input = "CFFFP_PA_con_fibras.gcode"
+output = "CFFFP_PA_corte_con_fibras.gcode"
 
 numero_capas = insertar_comando_servo(input, output)
 print(f"el comando del servo ha sido insertado cada cambio de capa. numero de capas: {numero_capas}")
