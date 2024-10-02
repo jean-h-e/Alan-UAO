@@ -57,9 +57,11 @@ G0 F3000 X721.109 Y484.471
 ;TIME_ELAPSED:346.388425
 ;LAYER:1
 M400 ; espera a completar los movimientos anteriores (Layer 2)
-G1 Z10 ; sube el extrusor 5 mm (Layer 2)
+G91 ; modo de posicion relativa (Layer 2)
+G1 Z10 ; sube el extrusor 10 mm (Layer 2)
 M400 ; espera a completar los movimientos anteriores (Layer 2)
 G4 P500 ; delay 500 ms (Layer 2)
+G90 ; modo de posicion absoluta (Layer 2)
 M280 P0 S180 ; Baja el sistema (Layer 2)
 M400 ; espera a completar los movimientos anteriores (Layer 2)
 G4 P500 ; delay 500 ms (Layer 2)
@@ -84,9 +86,11 @@ G4 P500 ; delay 500 ms (Layer 2)
 M280 P0 S0 ; sube el sistema (Layer 2)
 M400 ; espera a completar los movimientos anteriores (Layer 2)
 G4 P500 ; delay 500 ms (Layer 2)
-G1 Z-10 ; baja el extrusor 5 mm (Layer 2)
+G91 ; modo de posicion relativa (Layer 2)
+G1 Z-10 ; baja el extrusor 10 mm (Layer 2)
 M400 ; espera a completar los movimientos anteriores (Layer 2)
 G4 P500 ; delay 500 ms (Layer 2)
+G90 ; modo de posicion absoluta (Layer 2)
 M117 INDICATOR-Layer1
 ;TYPE:WALL-OUTER
 ;MESH:Probeta.STL
@@ -114,9 +118,11 @@ G0 F3000 X721.109 Y484.471
 ;TIME_ELAPSED:675.391912
 ;LAYER:2
 M400 ; espera a completar los movimientos anteriores (Layer 3)
-G1 Z10 ; sube el extrusor 5 mm (Layer 3)
+G91 ; modo de posicion relativa (Layer 3)
+G1 Z10 ; sube el extrusor 10 mm (Layer 3)
 M400 ; espera a completar los movimientos anteriores (Layer 3)
 G4 P500 ; delay 500 ms (Layer 3)
+G90 ; modo de posicion absoluta (Layer 3)
 M280 P0 S180 ; Baja el sistema (Layer 3)
 M400 ; espera a completar los movimientos anteriores (Layer 3)
 G4 P500 ; delay 500 ms (Layer 3)
@@ -141,9 +147,11 @@ G4 P500 ; delay 500 ms (Layer 3)
 M280 P0 S0 ; sube el sistema (Layer 3)
 M400 ; espera a completar los movimientos anteriores (Layer 3)
 G4 P500 ; delay 500 ms (Layer 3)
-G1 Z-10 ; baja el extrusor 5 mm (Layer 3)
+G91 ; modo de posicion relativa (Layer 3)
+G1 Z-10 ; baja el extrusor 10 mm (Layer 3)
 M400 ; espera a completar los movimientos anteriores (Layer 3)
 G4 P500 ; delay 500 ms (Layer 3)
+G90 ; modo de posicion absoluta (Layer 3)
 M117 INDICATOR-Layer2
 ;TYPE:WALL-OUTER
 ;MESH:Probeta.STL
@@ -171,9 +179,11 @@ G0 F3000 X721.109 Y484.471
 ;TIME_ELAPSED:1004.395400
 ;LAYER:3
 M400 ; espera a completar los movimientos anteriores (Layer 4)
-G1 Z10 ; sube el extrusor 5 mm (Layer 4)
+G91 ; modo de posicion relativa (Layer 4)
+G1 Z10 ; sube el extrusor 10 mm (Layer 4)
 M400 ; espera a completar los movimientos anteriores (Layer 4)
 G4 P500 ; delay 500 ms (Layer 4)
+G90 ; modo de posicion absoluta (Layer 4)
 M280 P0 S180 ; Baja el sistema (Layer 4)
 M400 ; espera a completar los movimientos anteriores (Layer 4)
 G4 P500 ; delay 500 ms (Layer 4)
@@ -198,9 +208,11 @@ G4 P500 ; delay 500 ms (Layer 4)
 M280 P0 S0 ; sube el sistema (Layer 4)
 M400 ; espera a completar los movimientos anteriores (Layer 4)
 G4 P500 ; delay 500 ms (Layer 4)
-G1 Z-10 ; baja el extrusor 5 mm (Layer 4)
+G91 ; modo de posicion relativa (Layer 4)
+G1 Z-10 ; baja el extrusor 10 mm (Layer 4)
 M400 ; espera a completar los movimientos anteriores (Layer 4)
 G4 P500 ; delay 500 ms (Layer 4)
+G90 ; modo de posicion absoluta (Layer 4)
 M117 INDICATOR-Layer3
 ;TYPE:WALL-OUTER
 ;MESH:Probeta.STL

@@ -17,9 +17,11 @@ def insertar_comando_servo(input, output):
                 # añade el comando del servo despues del cambio de capa
                 comando_servo = [
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
-                f"G1 Z10 ; sube el extrusor 5 mm (Layer {capa})\n",
+                f"G91 ; modo de posicion relativa (Layer {capa})\n",
+                f"G1 Z10 ; sube el extrusor 10 mm (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
+                f"G90 ; modo de posicion absoluta (Layer {capa})\n",
                 f"M280 P0 S180 ; Baja el sistema (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
@@ -41,12 +43,14 @@ def insertar_comando_servo(input, output):
                 f"M280 P1 S180 ; acomoda el sistema para subir (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
-                f"M280 P0 S0 ; sube el sistema (Layer {capa})\n"
+                f"M280 P0 S0 ; sube el sistema (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
-                f"G1 Z-10 ; baja el extrusor 5 mm (Layer {capa})\n",
+                f"G91 ; modo de posicion relativa (Layer {capa})\n",
+                f"G1 Z-10 ; baja el extrusor 10 mm (Layer {capa})\n",
                 f"M400 ; espera a completar los movimientos anteriores (Layer {capa})\n",
                 f"G4 P500 ; delay 500 ms (Layer {capa})\n",
+                f"G90 ; modo de posicion absoluta (Layer {capa})\n"
                 ]
                 gcode_modificado.extend(comando_servo)
     
