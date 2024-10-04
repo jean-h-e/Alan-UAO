@@ -60,8 +60,8 @@ def insertar_comando_servo(input, output):
     return capa
 
 # cambiar nombres si es necesario
-input = "CFFFP_PA_con_fibras.gcode"
-output = "CFFFP_PA_corte_con_fibras.gcode"
+input = "CFFFP_probeta.gcode"
+output = "CFFFP_probeta_corte_con_fibras.gcode"
 
 numero_capas = insertar_comando_servo(input, output)
 print(f"el comando del servo ha sido insertado cada cambio de capa. numero de capas: {numero_capas}")
